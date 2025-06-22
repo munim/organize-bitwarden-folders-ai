@@ -14,6 +14,13 @@ A command-line tool to automatically categorize your Bitwarden vault items using
 - Auto-categorizes company items by folder or email domain (no API cost)
 - Outputs a detailed CSV with categories, confidence, and reasons
 - CLI with flexible arguments and model selection
+- If a domain in the item's URL is not reachable, the item will be moved to a special
+  "Dead" folder. (A domain is considered unreachable if it does not resolve or respond
+  to network requests during processing.)
+- If the item's URL contains an IP address and it is a private IP (e.g., 10.x.x.x,
+  192.168.x.x, 172.16.x.x–172.31.x.x), the item will be moved to the
+  "Personal/Homelab" folder. This helps separate internal or homelab credentials from
+  public-facing ones.
 
 ---
 
